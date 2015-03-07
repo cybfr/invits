@@ -1,0 +1,68 @@
+\documentclass[]{letter}
+\usepackage[a6paper,landscape, left=0.2cm, right=0.2cm, vscale=0.80]{geometry}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[francais]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{fontspec}
+
+\defaultfontfeatures{%
+  RawFeature={%
+    %+calt   % *Contextual alternates
+    %,+clig  % *contextual ligatures
+    %,+ccmp  % *composition & decomposition
+    ,+tlig  % 'tex-ligatures': `` '' -- --- !` ?` << >>
+    ,+cv06  % narrow guillemets
+    }%
+  }
+
+%% Load Microtype with default settings. This will use the
+%% EB-Garamond protrusion definitions if present.
+\usepackage{microtype}
+\usepackage{xunicode}
+\usepackage{background}
+\backgroundsetup{
+scale=1,
+angle=0,
+opacity=1,  %% adjust
+contents={\includegraphics[width=\paperwidth]{floral_border_enveloppe.png}}
+}
+\usepackage{datatool}
+\newcommand{\qualities}[1]{
+  \fontsize{14}{14}\sffamily #1
+}
+\newcommand{\myname}[1]{
+  \fontsize{24}{28}\sffamily {#1}
+}
+\begin{document}
+\DTLloaddb{names}{list.csv}
+\DTLforeach{names}{\firstname=Firstname,\lastname=Lastname,\addressA=Address1,\addressB=Address2}{%
+\begin{letter}{}
+\centering
+\begin{minipage}[b]{0.77\textwidth}
+\centering
+\setsansfont{ChopinScript}\sffamily
+\fontsize{22}{18}\sffamily
+
+\bigskip
+\bigskip
+\bigskip
+
+{\color{RoyalPurple} 
+\myname{\firstname    \lastname}
+
+\bigskip
+\bigskip
+\bigskip
+\raggedleft\addressA
+
+\raggedleft\addressB
+\bigskip
+
+}
+\end{minipage}
+\end{letter}
+
+}
+\end{document}
