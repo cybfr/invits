@@ -1,5 +1,5 @@
 "Firstname","Lastname","Address1","Address2"
-"Elena","Kohler","E.V.",
+"Elena","Kohler",,
 "Pierre","Chabant","1 rue Magellan","78180 Montigny-le-Bretonneux"
 "Guillemette","Vuillemin","4 rue Mazière","78180 Montigny-le-Bretonneux"
 "Nikky","Bothro",,
@@ -14,3 +14,6 @@
 "Chloë","Lécuyer",,
 "Inès","Vuillemin",,
 "Audrey","Vuillemin",,
+"Charlotte","Villetèle",,
+"Pauline","Pécourt",,
+"Noah","Nestor",,

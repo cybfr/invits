@@ -1,5 +1,5 @@
 \documentclass[]{letter}
-\usepackage[a6paper,landscape, left=0.2cm, right=0.2cm, vscale=0.80]{geometry}
+\usepackage[c6paper,landscape, left=0.0cm, right=0.0cm, vscale=1.00]{geometry}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -26,22 +26,21 @@
 scale=1,
 angle=0,
 opacity=1,  %% adjust
-contents={\includegraphics[width=\paperwidth]{floral_border_enveloppe.png}}
+contents={\includegraphics[width=0.80\paperwidth]{floral_border_enveloppe.png}}
 }
 \usepackage{datatool}
 \newcommand{\qualities}[1]{
   \fontsize{14}{14}\sffamily #1
 }
 \newcommand{\myname}[1]{
-  \fontsize{24}{28}\sffamily {#1}
+  \fontsize{20}{28}\sffamily {#1}
 }
 \begin{document}
 \DTLloaddb{names}{list.csv}
 \DTLforeach{names}{\firstname=Firstname,\lastname=Lastname,\addressA=Address1,\addressB=Address2}{%
 \begin{letter}{}
-\centering
-\begin{minipage}[b]{0.77\textwidth}
-\centering
+\raggedleft
+\begin{minipage}[b]{0.65\textwidth}
 \setsansfont{ChopinScript}\sffamily
 \fontsize{22}{18}\sffamily
 
@@ -49,15 +48,15 @@ contents={\includegraphics[width=\paperwidth]{floral_border_enveloppe.png}}
 \bigskip
 \bigskip
 
+\bigskip
+\bigskip
 {\color{RoyalPurple} 
 \myname{\firstname    \lastname}
 
 \bigskip
-\bigskip
-\bigskip
-\raggedleft\addressA
+\raggedright\addressA
 
-\raggedleft\addressB
+\raggedright\addressB
 \bigskip
 
 }
